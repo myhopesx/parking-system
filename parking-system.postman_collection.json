@@ -1,0 +1,1396 @@
+{
+	"info": {
+		"_postman_id": "0dae74b7-7319-4f7f-b63b-b4cea565e781",
+		"name": "parking-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15493373"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "add-customer-1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"customer 1\",\r\n        \"email\":\"email1@gmail.com\",\r\n        \"role\":\"customer\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/customers/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-customer-2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"customer 2\",\r\n        \"email\":\"email2@gmail.com\",\r\n        \"role\":\"customer\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/customers/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-customer-3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"customer 3\",\r\n        \"email\":\"email3@gmail.com\",\r\n        \"role\":\"customer\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/customers/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-customer",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/customers/all",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-customer-by-id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/customers/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-customer-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email2@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"customer 2\",\r\n        \"email\":\"email2update@gmail.com\",\r\n        \"role\":\"customer\",\r\n        \"id\":2\r\n    },\r\n    \"id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/customers/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-customer-3",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email3@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/customers/3",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FacilityAdmin",
+			"item": [
+				{
+					"name": "add-facilities-admins-1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"FacilityAdmin 1\",\r\n        \"email\":\"owner1@gmail.com\",\r\n        \"role\":\"owner\"\r\n    },\r\n        \"isActive\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities-admins/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities-admins",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-facilities-admins-2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"FacilityAdmin 2\",\r\n        \"email\":\"owner2@gmail.com\",\r\n        \"role\":\"owner\"\r\n    },\r\n    \"isActive\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities-admins/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities-admins",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-facilities-admins-3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"FacilityAdmin 3\",\r\n        \"email\":\"owner3@gmail.com\",\r\n        \"role\":\"owner\"\r\n    },\r\n        \"isActive\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities-admins/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities-admins",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-facilities-admins",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/facilities-admins/all",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities-admins",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-facilities-admins-by-id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/facilities-admins/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities-admins",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-facilities-admins-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner2@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\": false,\r\n    \"myUser\": {\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\": \"0569813231\",\r\n        \"name\": \"FacilityAdmin 2\",\r\n        \"email\": \"owner2update@gmail.com\",\r\n        \"role\": \"owner\",\r\n        \"id\": 5\r\n    },\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities-admins/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities-admins",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-facilities-admins-3",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner3@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/facilities-admins/3",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities-admins",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-facility-for-facilityAdmin-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/facilities-admins/1/facilities",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities-admins",
+								"1",
+								"facilities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Facility",
+			"item": [
+				{
+					"name": "add-facility-1-to-owner-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Facility 1\",\r\n    \"address\": \"Alared\",\r\n    \"startTime\": \"12:00:00\",\r\n    \"endTime\": \"23:00:00\",\r\n    \"description\": \"Facility 1\",\r\n    \"contactInfo\": \"0569813231\",\r\n    \"isActive\": false,\r\n    \"logo\":\"logo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-facility-2-to-owner-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner2update@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Facility 2\",\r\n    \"address\": \"Alared\",\r\n    \"startTime\": \"12:00:00\",\r\n    \"endTime\": \"23:00:00\",\r\n    \"description\": \"Facility 2\",\r\n    \"contactInfo\": \"0569813231\",\r\n    \"isActive\": false,\r\n    \"logo\":\"logo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-facility-3-to-owner-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner2update@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Facility 3\",\r\n    \"address\": \"Alared\",\r\n    \"startTime\": \"12:00:00\",\r\n    \"endTime\": \"23:00:00\",\r\n    \"description\": \"Facility 3\",\r\n    \"contactInfo\": \"0569813231\",\r\n    \"isActive\": false,\r\n    \"logo\":\"logo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-facility-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner2update@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Facility 2 updated\",\r\n    \"address\": \"Alared\",\r\n    \"startTime\": \"12:00:00\",\r\n    \"endTime\": \"23:00:00\",\r\n    \"description\": \"Facility 2\",\r\n    \"contactInfo\": \"0569813231\",\r\n    \"isActive\": false,\r\n    \"logo\":\"logo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities/2/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities",
+								"2",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-facility-3",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner2update@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Facility 2 updated\",\r\n    \"address\": \"Alared\",\r\n    \"startTime\": \"12:00:00\",\r\n    \"endTime\": \"23:00:00\",\r\n    \"description\": \"Facility 2\",\r\n    \"contactInfo\": \"0569813231\",\r\n    \"isActive\": false,\r\n    \"logo\":\"logo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/facilities/3/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities",
+								"3",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-facilities",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/facilities/all",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-facility-by-id-1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/facilities/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"facilities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "security",
+			"item": [
+				{
+					"name": "add-security-1-to-facility-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"security 1\",\r\n        \"email\":\"security1@gmail.com\",\r\n        \"role\":\"security\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/securities/register/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"securities",
+								"register",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-security-2-to-facility-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner2update@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"security 2\",\r\n        \"email\":\"security2@gmail.com\",\r\n        \"role\":\"security\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/securities/register/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"securities",
+								"register",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-securities",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/securities/all",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"securities",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-securities-by-id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "security1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/securities/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"securities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-securities-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"myUser\":{\r\n        \"password\":\"123456\",\r\n        \"phoneNumber\":\"0569813231\",\r\n        \"name\": \"security 2\",\r\n        \"email\":\"security2up@gmail.com\",\r\n        \"role\":\"security\",\r\n    \"id\":2\r\n    },\r\n    \"id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/securities/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"securities",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-security-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "security1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/securities/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"securities",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Park",
+			"item": [
+				{
+					"name": "add-park-1-to-facility-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parkNumber\":1,\r\n    \"section\":\"A\",\r\n    \"pricePerHour\":10.0,\r\n    \"location\":\"Riyadh front\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/parks/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"parks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-park-2-to-facility-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parkNumber\":2,\r\n    \"section\":\"A\",\r\n    \"pricePerHour\":10.0,\r\n    \"location\":\"Riyadh front\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/parks/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"parks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-park-3-to-facility-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parkNumber\":3,\r\n    \"section\":\"A\",\r\n    \"pricePerHour\":10.0,\r\n    \"location\":\"Riyadh front\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/parks/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"parks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-park-1-to-facility-2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "owner1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parkNumber\":1,\r\n    \"section\":\"A\",\r\n    \"pricePerHour\":10.0,\r\n    \"location\":\"Riyadh front\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/parks/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"parks",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "add-car-1-to-customer-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plate\":\"AAA 111\",\r\n    \"name\":\"toyota\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/cars/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"cars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-car-1-from-customer-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/cars/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"cars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservations",
+			"item": [
+				{
+					"name": "add-reservation-1-tocustomer-1-in-facility-1-at-park-1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "email1@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startTime\": \"Wed Jul 06 2022 10:10:00 GMT+0300 (Arabian Standard Time)\",\r\n    \"endTime\": \"Wed Jul 06 2022 11:10:00 GMT+0300 (Arabian Standard Time)\",\r\n    \"customer\": {\r\n        \"id\": 1\r\n    },\r\n    \"facility\": {\r\n        \"id\":1\r\n        \r\n    },\r\n    \"car\":{\r\n        \"id\":1\r\n    },\r\n    \"park\": {\r\n            \"id\": 1\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/reservations/1/1/1/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"reservations",
+								"1",
+								"1",
+								"1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-reservation-1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/reservations/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"reservations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-reserved-park",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/reservations/parks?id=1&startTime=Wed Jul 06 2022 10:10:00 GMT+0300 (Arabian Standard Time)&endTime=Wed Jul 06 2022 11:10:00 GMT+0300 (Arabian Standard Time)",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"reservations",
+								"parks"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "startTime",
+									"value": "Wed Jul 06 2022 10:10:00 GMT+0300 (Arabian Standard Time)"
+								},
+								{
+									"key": "endTime",
+									"value": "Wed Jul 06 2022 11:10:00 GMT+0300 (Arabian Standard Time)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-reservation-1 Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/reservations/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"reservations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://localhost:8080/api/v1",
+			"type": "string"
+		}
+	]
+}
