@@ -54,7 +54,6 @@ public class CustomerController {
 
      @PostMapping("/login")
      public ResponseEntity<?> login(@AuthenticationPrincipal Customer customer  ) {
-
           logger.info("Get customers");
           return ResponseEntity.status(200).body(customerServices.getCustomerById(customer.getId()));
      }

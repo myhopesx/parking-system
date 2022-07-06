@@ -19210,3 +19210,5 @@ java.lang.NullPointerException: Cannot invoke "com.example.parking_system.model.
 2022-07-06 18:07:07.669  INFO 13532 --- [http-nio-8080-exec-2] c.e.p.Controller.ReservationController   : Get reservations
 2022-07-06 18:07:07.879  INFO 13532 --- [http-nio-8080-exec-10] c.e.p.Controller.MyUserController        : Get facility
 2022-07-06 18:07:07.879  INFO 13532 --- [http-nio-8080-exec-4] c.e.p.Controller.ReservationController   : Get reservations
+2022-07-06 18:08:15.940  INFO 13532 --- [http-nio-8080-exec-7] c.e.p.Controller.MyUserController        : Get facility
+2022-07-06 18:08:16.264  INFO 13532 --- [http-nio-8080-exec-6] c.e.p.Controller.MyUserController        : Get facility
