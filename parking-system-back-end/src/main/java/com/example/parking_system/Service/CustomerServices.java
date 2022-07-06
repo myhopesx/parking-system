@@ -62,4 +62,9 @@ public class CustomerServices {
           customerRepo.delete(c.get());
           return ResponseEntity.status(200).body(new API("Customer Deleted", 200));
      }
+
+     public Optional<MyUser> getCustomerByEmailAndPassword(String email , String password) {
+          return myUserService.getCustomerByEmailAndPassword(email,password);
+     }
+
 }

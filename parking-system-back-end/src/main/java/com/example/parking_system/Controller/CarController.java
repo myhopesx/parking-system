@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,19 +29,22 @@ public class CarController {
      private final CustomerServices customerServices;
      Logger logger = LoggerFactory.getLogger(CarController.class);
 
-//     @GetMapping("/{customer_id}")
-//     public ResponseEntity<List<Car>> getCarsByCustomerId(@PathVariable Integer customer_id) {
-//          logger.info("Get Cars By Customer Id");
-//          return ResponseEntity.status(200).body(carService.getCarsByCustomerId(customer_id));
-//     }
+     @GetMapping("/{customer_id}")
+   public ResponseEntity<?> getCarsByCustomerId(@AuthenticationPrincipal Customer customer  , @PathVariable Integer customer_id) {
+//         ResponseEntity<String> Customer_Not_Found = checkCustomerAuthorized(customer_id);
+//
+//         if (Customer_Not_Found != null) return Customer_Not_Found;
+
+          return ResponseEntity.status(200).body(carService.getCarsByCustomerId(customer_id));
+  }
 
      @PostMapping("/{customer_id}")
      public ResponseEntity<?> addCar(@RequestBody @Valid Car car, @PathVariable Integer customer_id) {
           logger.info("Add park");
 
-          ResponseEntity<String> Customer_Not_Found = checkCustomerAuthorized(customer_id);
-
-          if (Customer_Not_Found != null) return Customer_Not_Found;
+//          ResponseEntity<String> Customer_Not_Found = checkCustomerAuthorized(customer_id);
+//
+//          if (Customer_Not_Found != null) return Customer_Not_Found;
 
           carService.addCar(car, customer_id);
           return ResponseEntity.status(201).body(new API("Car Added", 201));

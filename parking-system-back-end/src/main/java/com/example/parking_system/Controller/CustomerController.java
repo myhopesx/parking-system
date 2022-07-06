@@ -2,12 +2,14 @@ package com.example.parking_system.Controller;
 
 import com.example.parking_system.Service.CustomerServices;
 import com.example.parking_system.model.Customer;
+import com.example.parking_system.model.Login;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,6 +41,22 @@ public class CustomerController {
 
 
           return ResponseEntity.status(200).body(customerServices.getCustomerById(customer_id).get());
+     }
+
+//     @PostMapping("/login")
+//     public ResponseEntity<?> login(@RequestBody Login login ) {
+//          System.out.println(login.getEmail());
+//          System.out.println(login.getPassword());
+//          logger.info("Get customers");
+//          return ResponseEntity.status(200).body(customerServices.getCustomerByEmailAndPassword(login.getEmail(),login.getPassword()).get());
+//     }
+
+
+     @PostMapping("/login")
+     public ResponseEntity<?> login(@AuthenticationPrincipal Customer customer  ) {
+
+          logger.info("Get customers");
+          return ResponseEntity.status(200).body(customerServices.getCustomerById(customer.getId()));
      }
 
      @PostMapping("/register")

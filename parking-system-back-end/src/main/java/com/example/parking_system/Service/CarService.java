@@ -56,7 +56,7 @@ public class CarService {
           carRepo.delete(currentCar.get());
      }
 
-//     public List<Car> getCarsByCustomerId(Integer customer_id) {
-//          return carRepo.findAllByCustomer_Id(customer_id);
-//     }
+     public List<Car> getCarsByCustomerId(Integer customer_id) {
+          return carRepo.findAllByCustomer_Id(customer_id);
+     }
 }

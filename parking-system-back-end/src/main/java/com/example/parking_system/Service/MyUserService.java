@@ -23,8 +23,6 @@ public class MyUserService {
      }
 
      public MyUser addUser(MyUser myUser) {
-          String hashedPassword = new BCryptPasswordEncoder().encode(myUser.getPassword());
-          myUser.setPassword(hashedPassword);
           return myUserRepo.save(myUser);
      }
 
@@ -38,8 +36,7 @@ public class MyUserService {
                throw new InvalidIdException("Invalid id");
           }
 
-          String hashedPassword = new BCryptPasswordEncoder().encode(myUser.getPassword());
-          currentUser.get().setPassword(hashedPassword);
+          currentUser.get().setPassword(myUser.getPassword());
 
           currentUser.get().setEmail(myUser.getEmail());
           currentUser.get().setPhoneNumber(myUser.getPhoneNumber());
@@ -56,20 +53,9 @@ public class MyUserService {
           }
           myUserRepo.delete(currentUser.get());
      }
+     public Optional<MyUser> getCustomerByEmailAndPassword(String email , String password) {
+          return myUserRepo.findByEmailAndPassword(email,password);
+     }
 
-
-//     public void securityCheck(String carPlate) {
-//          Optional<MyUser> user = myUserRepo.findByCarPlate(carPlate);
-//
-//          if (!user.isPresent()) {
-//               throw new InvalidCarPlateException("Car plate not registered !");
-//          }
-//
-//          Integer reservation = reservationRepo.checkReservationTime(user.get().getId());
-//
-//          if (reservation == null) {
-//               throw new NoValidReservationException("There is no valid reservation for this car !");
-//          }
-//     }
 
 }

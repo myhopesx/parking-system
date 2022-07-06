@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 import org.springframework.web.cors.CorsConfiguration;
@@ -38,9 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
      @Override
      protected void configure(AuthenticationManagerBuilder auth) throws Exception {//use database info
-          auth.userDetailsService(customerDetailsService).passwordEncoder(new BCryptPasswordEncoder());
-          auth.userDetailsService(facilityAdminDetailsService).passwordEncoder(new BCryptPasswordEncoder());
-          auth.userDetailsService(securityManDetailsService).passwordEncoder(new BCryptPasswordEncoder());
+          auth.userDetailsService(customerDetailsService).passwordEncoder(NoOpPasswordEncoder.getInstance());
+          auth.userDetailsService(facilityAdminDetailsService).passwordEncoder(NoOpPasswordEncoder.getInstance());
+          auth.userDetailsService(securityManDetailsService).passwordEncoder(NoOpPasswordEncoder.getInstance());
      }
 
      @Override
@@ -52,6 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                   // customer url
                   .antMatchers("/api/v1/customers/register").permitAll()
+                  .antMatchers("/api/v1/customers/login").permitAll()
                   .antMatchers("/api/v1/customers/all").hasAuthority("admin")
                   .antMatchers("/api/v1/customers").hasAnyAuthority("customer", "admin")
 
@@ -91,7 +93,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                   .antMatchers(HttpMethod.DELETE,"/api/v1/reservations/**").hasAuthority("customer")
                   .antMatchers(HttpMethod.PUT,"/api/v1/reservations/**")
                     .hasAnyAuthority("customer", "owner", "admin", "security")
-
 
                   .anyRequest().authenticated()
                   .and().httpBasic()
